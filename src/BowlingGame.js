@@ -1,16 +1,16 @@
 class BowlingGame {
   constructor() {
-    this.throws = [];
+    this.frames = [];
   }
 
   openFrame(firstThrow = 0, secondThrow = 0) {
-    this.throws.push(firstThrow);
-    this.throws.push(secondThrow);
+    const frame = new Frame(firstThrow, secondThrow);
+    this.frames.push(frame);
   }
 
   score() {
-    const score = this.throws.reduce(
-      (total, currentThrow) => (total += currentThrow)
+    const score = this.frames.reduce(
+      (total, frame) => (total += frame.score())
     );
     return score;
   }
