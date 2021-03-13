@@ -1,3 +1,5 @@
+const Frame = require("../Frame/Frame");
+
 class BowlingGame {
   constructor() {
     this.frames = [];
@@ -8,9 +10,10 @@ class BowlingGame {
     this.frames.push(frame);
   }
 
-  score() {
+  getScore() {
     const score = this.frames.reduce(
-      (total, frame) => (total += frame.score())
+      (total, frame) => (total += frame.getScore()),
+      0
     );
     return score;
   }
