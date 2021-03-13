@@ -16,7 +16,7 @@ class BowlingGame {
     this.frames.push(spare);
   }
 
-  getScore() {
+  calculateScore() {
     const score = this.frames.reduce(
       (total, frame) => (total += frame.score),
       0
