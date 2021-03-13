@@ -1,10 +1,8 @@
-class OpenFrame {
-  constructor(firstThrow = 0, secondThrow = 0) {
-    this.score = firstThrow + secondThrow;
-  }
+const Frame = require("../Frame");
 
-  getScore() {
-    return this.score;
+class OpenFrame extends Frame {
+  constructor(firstThrow = 0, secondThrow = 0) {
+    super(firstThrow + secondThrow);
   }
 }
 

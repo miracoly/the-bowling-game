@@ -1,5 +1,5 @@
-const OpenFrame = require("../OpenFrame/OpenFrame");
-const SpareFrame = require("../SpareFrame/SpareFrame");
+const OpenFrame = require("../Frame/OpenFrame/OpenFrame");
+const SpareFrame = require("../Frame/SpareFrame/SpareFrame");
 
 class BowlingGame {
   constructor() {
