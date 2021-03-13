@@ -1,15 +1,15 @@
 /* This class is meant to be abstract and should not be constructed */
 class Frame {
   constructor(score = 0) {
-    this.score = score;
+    this._score = score;
   }
 
-  setScore(score) {
-    this.score = score;
+  set score(score) {
+    this._score = score;
   }
 
-  getScore() {
-    return this.score;
+  get score() {
+    return this._score;
   }
 }
 
