@@ -1,0 +1,23 @@
+{
+  "name": "the-bowling-game",
+  "version": "1.0.0",
+  "description": "This project is part of my Apprenticeship Program at kloseBrothers. The goal is to fullfill the requirements of the following code kata by using TDD, Test Driven Development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miracoly/the-bowling-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miracoly/the-bowling-game/issues"
+  },
+  "homepage": "https://github.com/miracoly/the-bowling-game#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
