@@ -1,4 +1,4 @@
-class Frame {
+class OpenFrame {
   constructor(firstThrow = 0, secondThrow = 0) {
     this.score = firstThrow + secondThrow;
   }
@@ -8,4 +8,4 @@ class Frame {
   }
 }
 
-module.exports = Frame;
+module.exports = OpenFrame;

@@ -1,4 +1,4 @@
-const Frame = require("../Frame/Frame");
+const OpenFrame = require("../OpenFrame/OpenFrame");
 
 class BowlingGame {
   constructor() {
@@ -6,7 +6,7 @@ class BowlingGame {
   }
 
   openFrame(firstThrow = 0, secondThrow = 0) {
-    const frame = new Frame(firstThrow, secondThrow);
+    const frame = new OpenFrame(firstThrow, secondThrow);
     this.frames.push(frame);
   }
 
