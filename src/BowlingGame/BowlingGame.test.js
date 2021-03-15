@@ -28,6 +28,13 @@ test("First Spare, second OpenFrame (7, 1), rest zeros", () => {
   expect(game.calculateScore()).toBe(25);
 });
 
+test("First Strike, second OpenFrame (5, 3), rest zeros", () => {
+  game.strike();
+  game.openFrame(5, 3);
+  manyOpenFrames(8, 0, 0);
+  expect(game.calculateScore()).toBe(26);
+});
+
 const manyOpenFrames = (count = 10, firstThrow = 0, secondThrow = 0) => {
   for (let frameNumber = 0; frameNumber < count; frameNumber++) {
     game.openFrame(firstThrow, secondThrow);
