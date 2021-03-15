@@ -3,6 +3,17 @@ class Frame {
   constructor(throws = []) {
     this.throws = throws;
     this.startingThrow = throws.length;
+    this.frameSize = 2;
+  }
+
+  firstFollowingBall() {
+    const { throws, startingThrow, frameSize } = this;
+    return throws[startingThrow + frameSize];
+  }
+
+  secondFollowingBall() {
+    const { throws, startingThrow, frameSize } = this;
+    return throws[startingThrow + frameSize + 1];
   }
 }
 

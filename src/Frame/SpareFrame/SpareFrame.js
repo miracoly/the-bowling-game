@@ -7,12 +7,8 @@ class SpareFrame extends Frame {
     this.throws.push(secondThrow);
   }
 
-  nextBall() {
-    return this.throws[this.startingThrow + 2];
-  }
-
   getScore() {
-    return 10 + this.nextBall();
+    return 10 + this.firstFollowingBall();
   }
 }
 
