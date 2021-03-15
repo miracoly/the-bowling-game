@@ -4,7 +4,7 @@ class SpareFrame extends Frame {
   constructor(throws = [], firstThrow, secondThrow) {
     super();
     this.throws = throws;
-    this.startingThrow = this.throws.length;
+    this.startingThrow = throws.length;
     this.throws.push(firstThrow);
     this.throws.push(secondThrow);
   }
