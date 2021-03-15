@@ -1,10 +1,8 @@
 const Frame = require("../Frame");
 
 class StrikeFrame extends Frame {
-  constructor(throws = []) {
-    super();
-    this.throws = throws;
-    this.startingThrow = throws.length;
+  constructor(throws) {
+    super(throws);
     this.throws.push(10);
   }
 

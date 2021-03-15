@@ -1,18 +1,15 @@
 const Frame = require("../Frame");
 
 class OpenFrame extends Frame {
-  constructor(throws = [], firstThrow = 0, secondThrow = 0) {
-    super(firstThrow + secondThrow);
-    this.throws = throws;
-    this.startingThrow = throws.length;
+  constructor(throws, firstThrow = 0, secondThrow = 0) {
+    super(throws, firstThrow + secondThrow);
     this.throws.push(firstThrow);
     this.throws.push(secondThrow);
   }
 
   getScore() {
-    return (
-      this.throws[this.startingThrow] + this.throws[this.startingThrow + 1]
-    );
+    const { throws, startingThrow } = this;
+    return throws[startingThrow] + throws[startingThrow + 1];
   }
 }
 
