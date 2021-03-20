@@ -23,6 +23,16 @@ test("Spare, total 23", () => {
   expect(game.getScore()).toBe(23);
 });
 
+test("Strike, total 29", () => {
+  game.roll(10);
+  game.roll(5);
+  game.roll(3);
+  game.roll(2);
+  game.roll(1);
+  rollMany(14, 0);
+  expect(game.getScore()).toBe(29);
+});
+
 const rollMany = (count, roll) => {
   for (let i = 0; i < count; i++) {
     game.roll(roll);
