@@ -6,12 +6,12 @@ beforeEach(() => {
 
 test("GutterBalls: all throws are zeros", () => {
   rollMany(20, 0);
-  expect(game.calculateScore()).toBe(0);
+  expect(game.getScore()).toBe(0);
 });
 
 test("Threes: all throws are threes", () => {
   rollMany(20, 3);
-  expect(game.calculateScore()).toBe(60);
+  expect(game.getScore()).toBe(60);
 });
 
 test("Spare, total 23", () => {
@@ -20,7 +20,7 @@ test("Spare, total 23", () => {
   game.roll(5);
   game.roll(3);
   rollMany(16, 0);
-  expect(game.calculateScore()).toBe(23);
+  expect(game.getScore()).toBe(23);
 });
 
 const rollMany = (count, roll) => {
