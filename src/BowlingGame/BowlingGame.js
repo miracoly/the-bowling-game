@@ -1,6 +1,7 @@
 const OpenFrame = require("../Frame/OpenFrame/OpenFrame");
 const SpareFrame = require("../Frame/SpareFrame/SpareFrame");
 const StrikeFrame = require("../Frame/StrikeFrame/StrikeFrame");
+const BonusBall = require("../Frame/BonusRoll/BonusRoll");
 
 class BowlingGame {
   constructor() {
@@ -21,6 +22,11 @@ class BowlingGame {
   strike() {
     const strike = new StrikeFrame(this.throws);
     this.frames.push(strike);
+  }
+
+  bonusBall(firstThrow) {
+    const bonusBall = new BonusBall(this.throws, firstThrow);
+    this.frames.push(bonusBall);
   }
 
   calculateScore() {
