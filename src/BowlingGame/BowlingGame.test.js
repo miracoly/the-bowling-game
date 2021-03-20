@@ -14,6 +14,15 @@ test("Threes: all throws are threes", () => {
   expect(game.calculateScore()).toBe(60);
 });
 
+test("Spare, total 23", () => {
+  game.roll(4);
+  game.roll(6);
+  game.roll(5);
+  game.roll(3);
+  rollMany(16, 0);
+  expect(game.calculateScore()).toBe(23);
+});
+
 const rollMany = (count, roll) => {
   for (let i = 0; i < count; i++) {
     game.roll(roll);
