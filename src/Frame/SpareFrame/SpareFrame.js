@@ -8,7 +8,7 @@ class SpareFrame extends Frame {
   }
 
   getScore() {
-    return 10 + this.firstFollowingBall();
+    return 10 + this.firstBonusBall();
   }
 }
 

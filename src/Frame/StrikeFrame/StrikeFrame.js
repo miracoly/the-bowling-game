@@ -8,7 +8,7 @@ class StrikeFrame extends Frame {
   }
 
   getScore() {
-    return 10 + this.firstFollowingBall() + this.secondFollowingBall();
+    return 10 + this.firstBonusBall() + this.secondBonusBall();
   }
 }
 

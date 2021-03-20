@@ -6,12 +6,12 @@ class Frame {
     this.frameSize = 2;
   }
 
-  firstFollowingBall() {
+  firstBonusBall() {
     const { throws, startingThrow, frameSize } = this;
     return throws[startingThrow + frameSize];
   }
 
-  secondFollowingBall() {
+  secondBonusBall() {
     const { throws, startingThrow, frameSize } = this;
     return throws[startingThrow + frameSize + 1];
   }
