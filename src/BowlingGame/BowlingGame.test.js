@@ -50,13 +50,22 @@ test("Spare in Final Frame", () => {
   expect(game.calculateScore()).toBe(15);
 });
 
-test("Perfect Game: Score of 300", () => {
+test("Perfect Game", () => {
   for (let i = 0; i < 10; i++) {
     game.strike();
   }
   game.bonusBall(10);
   game.bonusBall(10);
   expect(game.calculateScore()).toBe(300);
+});
+
+test("Alternating Strike & Spare", () => {
+  for (let i = 0; i < 5; i++) {
+    game.strike();
+    game.spare(5, 5);
+  }
+  game.bonusBall(10);
+  expect(game.calculateScore()).toBe(200);
 });
 
 const manyOpenFrames = (count = 10, firstThrow = 0, secondThrow = 0) => {
