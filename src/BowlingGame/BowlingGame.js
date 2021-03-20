@@ -1,10 +1,23 @@
 class BowlingGame {
-  constructor() {}
+  constructor() {
+    this.rolls = [];
+  }
 
-  roll() {}
+  roll(roll) {
+    this.rolls.push(roll);
+  }
 
   calculateScore() {
-    return 0;
+    let rollIndex = 0;
+    let total = 0;
+    const { rolls } = this;
+
+    for (let frame = 0; frame < 10; frame++) {
+      total += rolls[rollIndex] + rolls[rollIndex + 1];
+      rollIndex += 2;
+    }
+
+    return total;
   }
 }
 
