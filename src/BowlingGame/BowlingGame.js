@@ -1,15 +1,10 @@
 class BowlingGame {
-  constructor() {
-    this.frames = [];
-    this.throws = [];
-  }
+  constructor() {}
+
+  roll() {}
 
   calculateScore() {
-    const score = this.frames.reduce(
-      (total, frame) => (total += frame.getScore()),
-      0
-    );
-    return score;
+    return 0;
   }
 }
 
