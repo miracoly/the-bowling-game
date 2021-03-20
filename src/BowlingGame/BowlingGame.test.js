@@ -35,6 +35,14 @@ test("First Strike, second OpenFrame (5, 3), rest zeros", () => {
   expect(game.calculateScore()).toBe(26);
 });
 
+test("Strike in Final Frame", () => {
+  manyOpenFrames(9, 0, 0);
+  game.strike();
+  game.bonusBall(5);
+  game.bonusBall(3);
+  expect(game.calculateScore()).toBe(18);
+});
+
 const manyOpenFrames = (count = 10, firstThrow = 0, secondThrow = 0) => {
   for (let frameNumber = 0; frameNumber < count; frameNumber++) {
     game.openFrame(firstThrow, secondThrow);
