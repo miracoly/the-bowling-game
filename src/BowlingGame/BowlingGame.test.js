@@ -5,15 +5,17 @@ beforeEach(() => {
 });
 
 test("GutterBalls: all throws are zeros", () => {
-  for (let i = 0; i < 20; i++) {
-    game.roll(0);
-  }
+  rollMany(20, 0);
   expect(game.calculateScore()).toBe(0);
 });
 
 test("Threes: all throws are threes", () => {
-  for (let i = 0; i < 20; i++) {
-    game.roll(3);
-  }
+  rollMany(20, 3);
   expect(game.calculateScore()).toBe(60);
 });
+
+const rollMany = (count, roll) => {
+  for (let i = 0; i < count; i++) {
+    game.roll(roll);
+  }
+};
