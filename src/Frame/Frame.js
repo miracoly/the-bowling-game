@@ -1,9 +1,9 @@
 /* This class is meant to be abstract and should not be constructed */
 class Frame {
-  constructor(throws = []) {
+  constructor(throws = [], frameSize = 2) {
     this.throws = throws;
     this.startingThrow = throws.length;
-    this.frameSize = 2;
+    this.frameSize = frameSize;
   }
 
   firstBonusBall() {

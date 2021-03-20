@@ -2,9 +2,8 @@ const Frame = require("../Frame");
 
 class StrikeFrame extends Frame {
   constructor(throws) {
-    super(throws);
+    super(throws, 1);
     this.throws.push(10);
-    this.frameSize = 1;
   }
 
   getScore() {
