@@ -38,6 +38,16 @@ test("Perfect Game", () => {
   expect(game.getScore()).toBe(300);
 });
 
+test("Alternating Strike & Spare", () => {
+  for (let i = 0; i < 5; i++) {
+    game.roll(10);
+    game.roll(4);
+    game.roll(6);
+  }
+  game.roll(10);
+  expect(game.getScore()).toBe(200);
+});
+
 const rollMany = (count, roll) => {
   for (let i = 0; i < count; i++) {
     game.roll(roll);
