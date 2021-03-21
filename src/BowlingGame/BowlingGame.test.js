@@ -14,7 +14,7 @@ test("Threes: all throws are threes", () => {
   expect(game.getScore()).toBe(60);
 });
 
-test("Spare, total 23", () => {
+test("Spare", () => {
   game.roll(4);
   game.roll(6);
   game.roll(5);
@@ -23,7 +23,7 @@ test("Spare, total 23", () => {
   expect(game.getScore()).toBe(23);
 });
 
-test("Strike, total 29", () => {
+test("Strike", () => {
   game.roll(10);
   game.roll(5);
   game.roll(3);
@@ -31,6 +31,11 @@ test("Strike, total 29", () => {
   game.roll(1);
   rollMany(14, 0);
   expect(game.getScore()).toBe(29);
+});
+
+test("Perfect Game", () => {
+  rollMany(12, 10);
+  expect(game.getScore()).toBe(300);
 });
 
 const rollMany = (count, roll) => {
