@@ -98,7 +98,7 @@ test("Midgame Score: last Spare", () => {
   expect(game.calculateScore()).toBe(50);
 });
 
-test("Midgame Score: Spare + 1 additional frame", () => {
+test("Midgame Score: Strike + 1 additional frame", () => {
   manyOpenFrames(5, 4, 4);
   game.strike();
   game.openFrame(5, 0);
