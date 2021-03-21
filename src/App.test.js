@@ -1,10 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 import App from "./App";
 
-it("Renders BowlingGame component", () => {
-  const root = document.createElement("div");
-  ReactDOM.render(<App />, root);
+beforeEach(() => render(<App />));
 
-  expect(root.querySelector("#bowling-game").textContent).toBe("Bowling Game");
+test("Renders BowlingGame component", () => {
+  expect(screen.getByTestId("bowling-game")).toBeInTheDocument();
 });
