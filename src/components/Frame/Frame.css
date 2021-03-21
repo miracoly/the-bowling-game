@@ -1,0 +1,47 @@
+.frame {
+  min-width: 110px;
+  min-height: 120px;
+  background: var(--primary-bg-color);
+  color: var(--primary-color);
+  margin: 3px;
+  box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+.frame-index {
+  height: 20%;
+  background: var(--secondary-bg-color);
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.throws {
+  display: flex;
+  justify-content: space-evenly;
+  height: 40%;
+}
+
+.throws div {
+  display: grid;
+  place-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.last-frame .throws div {
+  width: 32%;
+}
+
+.second-throw {
+  background: var(--tertiary-bg-color);
+}
+
+.third-throw {
+  background: var(--tertiary-bg-color);
+}
+
+.frame-total {
+  height: 40%;
+  display: grid;
+  place-items: center;
+}
