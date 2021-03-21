@@ -86,6 +86,12 @@ test("Midgame Score: first Spare, rest open", () => {
   expect(game.calculateScore()).toBe(54);
 });
 
+test("Midgame Score: last Strike", () => {
+  manyOpenFrames(5, 4, 4);
+  game.strike();
+  expect(game.calculateScore()).toBe(55);
+});
+
 const manyOpenFrames = (count = 10, firstThrow = 0, secondThrow = 0) => {
   for (let frameNumber = 0; frameNumber < count; frameNumber++) {
     game.openFrame(firstThrow, secondThrow);
