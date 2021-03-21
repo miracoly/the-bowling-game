@@ -8,7 +8,8 @@ class Frame {
 
   bonusBall(count) {
     const { throws, startingThrow, frameSize } = this;
-    return throws[startingThrow + frameSize + count];
+    const result = throws[startingThrow + frameSize + count];
+    return result ? result : 0;
   }
 
   firstBonusBall() {
