@@ -1,0 +1,10 @@
+.pin-button {
+  width: 40px;
+  height: 40px;
+  margin: 3px;
+}
+
+.pin-button:hover,
+.pin-button:focus {
+  cursor: pointer;
+}

@@ -1,5 +1,21 @@
 .bowling-game {
+  margin: 40px auto;
+}
+
+.frames,
+.pin-buttons {
   display: flex;
   justify-content: center;
-  margin: 40px auto;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+.score-container {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.score {
+  font-size: 48px;
+  font-weight: 700;
 }
