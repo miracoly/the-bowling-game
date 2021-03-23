@@ -1,7 +1,7 @@
 const Frame = require("../Frame");
 
 class OpenFrame extends Frame {
-  constructor(throws, firstThrow = 0, secondThrow = 0) {
+  constructor(throws) {
     super(throws, firstThrow + secondThrow);
     this.throws.push(firstThrow);
     this.throws.push(secondThrow);
