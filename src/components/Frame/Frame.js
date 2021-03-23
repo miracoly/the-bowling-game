@@ -9,11 +9,11 @@ const Frame = ({ index, isLastFrame }) => {
     >
       <div className="frame-index">{index}</div>
       <div className="throws">
-        <div className="first-throw">3</div>
-        <div className="second-throw">4</div>
-        {isLastFrame ? <div className="third-throw">4</div> : null}
+        <div className="first-throw"></div>
+        <div className="second-throw"></div>
+        {isLastFrame ? <div className="third-throw"></div> : null}
       </div>
-      <div className="frame-total">7</div>
+      <div className="frame-total"></div>
     </div>
   );
 };
