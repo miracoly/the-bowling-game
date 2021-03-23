@@ -1,4 +1,4 @@
-# The Bowling Game
+# GUI Version - The Bowling Game
 
 GUI version of the bowling game.
 
