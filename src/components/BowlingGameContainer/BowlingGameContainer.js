@@ -68,7 +68,10 @@ const BowlingGameContainer = ({ initialBowlingGame }) => {
 
   const throwNewBall = (pins) => {
     const isLastFrame = bowlingGame.frames.length >= 9;
-    const isStrike = currentFirstThrow === null && pins === 10;
+    const isStrike =
+      bowlingGame.frames.length < 10 &&
+      currentFirstThrow === null &&
+      pins === 10;
     const isSpare =
       currentFirstThrow !== null && currentFirstThrow + pins === 10;
     const isOpenFrame =
