@@ -53,6 +53,21 @@ test("UI: First Spare, second OpenFrame (3, 5), rest zeros", () => {
   expectFrameToBe(2, 3, 5, 8);
 });
 
+test("First Strike, second OpenFrame (5, 3), rest zeros", () => {
+  /* Set game to test case */
+  game.strike();
+  game.openFrame(5, 3);
+  manyOpenFrames(game, 8, 0, 0);
+  render(<BowlingGameContainer initialBowlingGame={game} />);
+
+  /* Test UI Score */
+  expectTotalScoreToBe(26);
+
+  /* Test UI of first two frames */
+  expectFrameToBe(1, 10, null, 18);
+  expectFrameToBe(2, 5, 3, 8);
+});
+
 /* Helper Functions to test UI */
 
 const expectTotalScoreToBe = (score) => {
@@ -66,8 +81,9 @@ const expectFrameToBe = (frameIndex, firstThrow, secondThrow, frameTotal) => {
     firstThrow.toString()
   );
   expect(getByTestId(`second-throw-${frameIndex}`)).toHaveTextContent(
-    secondThrow.toString()
+    secondThrow !== null ? secondThrow.toString() : ""
   );
+
   expect(getByTestId(`frame-total-${frameIndex}`)).toHaveTextContent(
     frameTotal.toString()
   );
