@@ -4,9 +4,6 @@ import BowlingGameContainer from "./components/BowlingGameContainer/BowlingGameC
 
 function App() {
   const initialBowlingGame = new BowlingGame();
-  for (let i = 1; i <= 9; i++) {
-    initialBowlingGame.openFrame(0, 0);
-  }
 
   return (
     <div className="App">
