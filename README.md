@@ -18,6 +18,12 @@ You can read the full description of the problem at [Coding Dojo](http://codingd
 
 The main focus of this project is to write tests first and the code after.
 
+## GUI - Version
+
+You find a GUI version here: [Code](https://github.com/miracoly/the-bowling-game/tree/gui)
+
+[![screenshot](https://github.com/miracoly/the-bowling-game/raw/gui/public/preview.png)](https://github.com/miracoly/the-bowling-game/tree/gui)
+
 ## Build with
 
 - Jest: Javascript Testing Framework - [Doc](https://jestjs.io/docs/getting-started) | [Repo](https://github.com/facebook/jest)
