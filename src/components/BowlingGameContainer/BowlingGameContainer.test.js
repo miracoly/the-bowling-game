@@ -17,7 +17,6 @@ test("UI: GutterBalls: all throws are zeros", () => {
 
   /* Test total score to equal 0 */
   expectTotalScoreToBe(0);
-
   /* Test first and second throw to equal 0 */
   for (let i = 1; i <= 10; i++) {
     expectFrameToBe(i, 0, 0, 0);
@@ -31,7 +30,6 @@ test("UI: Threes: all throws are threes", () => {
 
   /* Test UI Score */
   expectTotalScoreToBe(60);
-
   /* Test first and second throw to equal 3 and frameTotal 6 */
   for (let i = 1; i <= 10; i++) {
     expectFrameToBe(i, 3, 3, 6);
@@ -45,10 +43,8 @@ test("UI: First Spare, second OpenFrame (3, 5), rest zeros", () => {
   manyOpenFrames(game, 8, 0, 0);
   render(<BowlingGameContainer initialBowlingGame={game} />);
 
-  /* Test UI Score */
+  /* Test UI */
   expectTotalScoreToBe(21);
-
-  /* Test UI of first two frames */
   expectFrameToBe(1, 4, 6, 13);
   expectFrameToBe(2, 3, 5, 8);
 });
@@ -60,10 +56,8 @@ test("UI: First Strike, second OpenFrame (5, 3), rest zeros", () => {
   manyOpenFrames(game, 8, 0, 0);
   render(<BowlingGameContainer initialBowlingGame={game} />);
 
-  /* Test UI Score */
+  /* Test UI */
   expectTotalScoreToBe(26);
-
-  /* Test UI of first two frames */
   expectFrameToBe(1, 10, null, 18);
   expectFrameToBe(2, 5, 3, 8);
 });
@@ -76,11 +70,21 @@ test("UI: Strike in Final Frame", () => {
   game.bonusBall(3);
   render(<BowlingGameContainer initialBowlingGame={game} />);
 
-  /* Test UI Score */
+  /* Test UI  */
   expectTotalScoreToBe(18);
-
-  /* Test UI of last frame */
   expectLastFrameToBe(10, 5, 3, 18);
+});
+
+test("UI: Spare in Final Frame", () => {
+  /* Set game to test case */
+  manyOpenFrames(game, 9, 0, 0);
+  game.spare(4, 6);
+  game.bonusBall(5);
+  render(<BowlingGameContainer initialBowlingGame={game} />);
+
+  /* Test UI  */
+  expectTotalScoreToBe(15);
+  expectLastFrameToBe(4, 6, 5, 15);
 });
 
 /* Helper Functions to test UI */
