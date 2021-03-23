@@ -1,7 +1,7 @@
-const OpenFrame = require("./Frame/OpenFrame/OpenFrame");
-const SpareFrame = require("./Frame/SpareFrame/SpareFrame");
-const StrikeFrame = require("./Frame/StrikeFrame/StrikeFrame");
-const BonusBall = require("./Frame/BonusRoll/BonusRoll");
+import OpenFrame from "./Frame/OpenFrame/OpenFrame";
+import SpareFrame from "./Frame/SpareFrame/SpareFrame";
+import StrikeFrame from "./Frame/StrikeFrame/StrikeFrame";
+import BonusBall from "./Frame/BonusRoll/BonusRoll";
 
 class BowlingGame {
   constructor() {
@@ -38,4 +38,4 @@ class BowlingGame {
   }
 }
 
-module.exports = BowlingGame;
+export default BowlingGame;

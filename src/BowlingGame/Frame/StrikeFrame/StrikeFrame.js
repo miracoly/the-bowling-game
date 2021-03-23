@@ -1,4 +1,4 @@
-const Frame = require("../Frame");
+import Frame from "../Frame";
 
 class StrikeFrame extends Frame {
   constructor(throws) {
@@ -11,4 +11,4 @@ class StrikeFrame extends Frame {
   }
 }
 
-module.exports = StrikeFrame;
+export default StrikeFrame;

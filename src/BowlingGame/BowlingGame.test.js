@@ -1,4 +1,5 @@
-const BowlingGame = require("./BowlingGame");
+import BowlingGame from "./BowlingGame";
+
 let game;
 
 beforeEach(() => {

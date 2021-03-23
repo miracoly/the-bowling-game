@@ -1,4 +1,4 @@
-const Frame = require("../Frame");
+import Frame from "../Frame";
 
 class BonusRoll extends Frame {
   constructor(throws, firstThrow) {
@@ -11,4 +11,4 @@ class BonusRoll extends Frame {
   }
 }
 
-module.exports = BonusRoll;
+export default BonusRoll;

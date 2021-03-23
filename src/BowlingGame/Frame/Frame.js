@@ -31,4 +31,4 @@ class Frame {
   }
 }
 
-module.exports = Frame;
+export default Frame;
