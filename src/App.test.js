@@ -16,3 +16,9 @@ test("BowlingGame contains 10 Frames", () => {
     expect(bowlingGame).toContainElement(frame);
   }
 });
+
+test("Score is 0 when BowlingGame is initialized", () => {
+  render(<App />);
+  const score = screen.getByTestId("score");
+  expect(score).toHaveTextContent("0");
+});
