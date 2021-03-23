@@ -105,7 +105,7 @@ test("Midgame Score: Strike + 1 additional frame", () => {
   expect(game.calculateScore()).toBe(60);
 });
 
-const manyOpenFrames = (count = 10, firstThrow = 0, secondThrow = 0) => {
+export const manyOpenFrames = (count = 10, firstThrow = 0, secondThrow = 0) => {
   for (let frameNumber = 0; frameNumber < count; frameNumber++) {
     game.openFrame(firstThrow, secondThrow);
   }

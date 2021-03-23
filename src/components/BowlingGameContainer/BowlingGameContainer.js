@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import Frame from "../Frame/Frame";
 import PinButton from "../PinButton/PinButton";
-import BowlingGame from "../../BowlingGame/BowlingGame";
 import "./BowlingGameContainer.css";
 
-const BowlingGameContainer = () => {
-  const [bowlingGame, setBowlingGame] = useState(new BowlingGame());
+const BowlingGameContainer = ({ initialBowlingGame }) => {
+  const [bowlingGame, setBowlingGame] = useState(initialBowlingGame);
   const uiFrame = [];
   const pinButtons = [];
 
@@ -14,6 +13,7 @@ const BowlingGameContainer = () => {
       key: `frame-${i}`,
       index: i,
       isLastFrame: i === 10,
+      bowlingGame,
     };
 
     uiFrame.push(<Frame {...props} />);
