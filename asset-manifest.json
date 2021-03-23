@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/the-bowling-game/static/css/main.64253b50.chunk.css",
+    "main.js": "/the-bowling-game/static/js/main.e9efe33c.chunk.js",
+    "main.js.map": "/the-bowling-game/static/js/main.e9efe33c.chunk.js.map",
+    "runtime-main.js": "/the-bowling-game/static/js/runtime-main.9bcfaf1b.js",
+    "runtime-main.js.map": "/the-bowling-game/static/js/runtime-main.9bcfaf1b.js.map",
+    "static/js/2.702227c3.chunk.js": "/the-bowling-game/static/js/2.702227c3.chunk.js",
+    "static/js/2.702227c3.chunk.js.map": "/the-bowling-game/static/js/2.702227c3.chunk.js.map",
+    "static/js/3.391785b2.chunk.js": "/the-bowling-game/static/js/3.391785b2.chunk.js",
+    "static/js/3.391785b2.chunk.js.map": "/the-bowling-game/static/js/3.391785b2.chunk.js.map",
+    "index.html": "/the-bowling-game/index.html",
+    "static/css/main.64253b50.chunk.css.map": "/the-bowling-game/static/css/main.64253b50.chunk.css.map",
+    "static/js/2.702227c3.chunk.js.LICENSE.txt": "/the-bowling-game/static/js/2.702227c3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9bcfaf1b.js",
+    "static/js/2.702227c3.chunk.js",
+    "static/css/main.64253b50.chunk.css",
+    "static/js/main.e9efe33c.chunk.js"
+  ]
+}
