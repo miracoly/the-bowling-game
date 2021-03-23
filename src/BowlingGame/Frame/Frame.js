@@ -6,6 +6,16 @@ class Frame {
     this.frameSize = frameSize;
   }
 
+  getFirstThrow() {
+    const { throws, startingThrow } = this;
+    return throws[startingThrow];
+  }
+
+  getSecondThrow() {
+    const { throws, startingThrow, frameSize } = this;
+    return frameSize === 2 ? throws[startingThrow + 1] : null;
+  }
+
   bonusBall(count) {
     const { throws, startingThrow, frameSize } = this;
     const result = throws[startingThrow + frameSize + count];

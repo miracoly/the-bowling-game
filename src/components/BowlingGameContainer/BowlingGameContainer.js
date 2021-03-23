@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Frame from "../Frame/Frame";
+import FrameContainer from "../FrameContainer/FrameContainer";
 import PinButton from "../PinButton/PinButton";
 import "./BowlingGameContainer.css";
 
@@ -16,7 +16,7 @@ const BowlingGameContainer = ({ initialBowlingGame }) => {
       bowlingGame,
     };
 
-    uiFrame.push(<Frame {...props} />);
+    uiFrame.push(<FrameContainer {...props} />);
     pinButtons.push(<PinButton key={i}>{i}</PinButton>);
   }
 

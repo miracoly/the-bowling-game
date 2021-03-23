@@ -1,8 +1,7 @@
 import React from "react";
-import "./Frame.css";
+import "./FrameContainer.css";
 
 const Frame = ({ index, isLastFrame, bowlingGame }) => {
-  console.log(bowlingGame);
   return (
     <div
       data-testid={`frame-${index}`}
@@ -11,14 +10,18 @@ const Frame = ({ index, isLastFrame, bowlingGame }) => {
       <div className="frame-index">{index}</div>
       <div className="throws">
         <div className="first-throw" data-testid={`first-throw-${index}`}>
-          0
+          {bowlingGame.frames[index - 1]
+            ? bowlingGame.frames[index - 1].getFirstThrow()
+            : ""}
         </div>
         <div className="second-throw" data-testid={`second-throw-${index}`}>
-          0
+          {bowlingGame.frames[index - 1]
+            ? bowlingGame.frames[index - 1].getSecondThrow()
+            : ""}
         </div>
         {isLastFrame ? <div className="third-throw"></div> : null}
       </div>
-      <div className="frame-total">
+      <div className="frame-total" data-testid={`frame-total-${index}`}>
         {bowlingGame.frames[index - 1]
           ? bowlingGame.frames[index - 1].getScore()
           : ""}

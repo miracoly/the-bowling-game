@@ -28,7 +28,6 @@ test("Threes: all throws are threes", () => {
   const game = new BowlingGame();
   manyOpenFrames(game, 10, 3, 3);
   render(<BowlingGameContainer initialBowlingGame={game} />);
-  console.log("threes", game);
 
   /* Test total score to equal 60 */
   const score = screen.getByTestId("score");

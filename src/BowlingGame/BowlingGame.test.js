@@ -6,38 +6,38 @@ beforeEach(() => {
 });
 
 test("GutterBalls: all throws are zeros", () => {
-  manyOpenFrames(10, 0, 0);
+  manyOpenFrames(game, 10, 0, 0);
   expect(game.calculateScore()).toBe(0);
 });
 
 test("Threes: all throws are threes", () => {
-  manyOpenFrames(10, 3, 3);
+  manyOpenFrames(game, 10, 3, 3);
   expect(game.calculateScore()).toBe(60);
 });
 
 test("First Spare, second OpenFrame (3, 5), rest zeros", () => {
   game.spare(4, 6);
   game.openFrame(3, 5);
-  manyOpenFrames(8, 0, 0);
+  manyOpenFrames(game, 8, 0, 0);
   expect(game.calculateScore()).toBe(21);
 });
 
 test("First Spare, second OpenFrame (7, 1), rest zeros", () => {
   game.spare(4, 6);
   game.openFrame(7, 1);
-  manyOpenFrames(8, 0, 0);
+  manyOpenFrames(game, 8, 0, 0);
   expect(game.calculateScore()).toBe(25);
 });
 
 test("First Strike, second OpenFrame (5, 3), rest zeros", () => {
   game.strike();
   game.openFrame(5, 3);
-  manyOpenFrames(8, 0, 0);
+  manyOpenFrames(game, 8, 0, 0);
   expect(game.calculateScore()).toBe(26);
 });
 
 test("Strike in Final Frame", () => {
-  manyOpenFrames(9, 0, 0);
+  manyOpenFrames(game, 9, 0, 0);
   game.strike();
   game.bonusBall(5);
   game.bonusBall(3);
@@ -45,7 +45,7 @@ test("Strike in Final Frame", () => {
 });
 
 test("Spare in Final Frame", () => {
-  manyOpenFrames(9, 0, 0);
+  manyOpenFrames(game, 9, 0, 0);
   game.spare(4, 6);
   game.bonusBall(5);
   expect(game.calculateScore()).toBe(15);
@@ -70,42 +70,47 @@ test("Alternating Strike & Spare", () => {
 });
 
 test("Midgame Score: OpenFrames", () => {
-  manyOpenFrames(5, 4, 4);
+  manyOpenFrames(game, 5, 4, 4);
   expect(game.calculateScore()).toBe(40);
 });
 
 test("Midgame Score: first Strike, rest open", () => {
   game.strike();
-  manyOpenFrames(5, 4, 4);
+  manyOpenFrames(game, 5, 4, 4);
   expect(game.calculateScore()).toBe(58);
 });
 
 test("Midgame Score: first Spare, rest open", () => {
   game.spare(6, 4);
-  manyOpenFrames(5, 4, 4);
+  manyOpenFrames(game, 5, 4, 4);
   expect(game.calculateScore()).toBe(54);
 });
 
 test("Midgame Score: last Strike", () => {
-  manyOpenFrames(5, 4, 4);
+  manyOpenFrames(game, 5, 4, 4);
   game.strike();
   expect(game.calculateScore()).toBe(50);
 });
 
 test("Midgame Score: last Spare", () => {
-  manyOpenFrames(5, 4, 4);
+  manyOpenFrames(game, 5, 4, 4);
   game.spare(4, 6);
   expect(game.calculateScore()).toBe(50);
 });
 
 test("Midgame Score: Strike + 1 additional frame", () => {
-  manyOpenFrames(5, 4, 4);
+  manyOpenFrames(game, 5, 4, 4);
   game.strike();
   game.openFrame(5, 0);
   expect(game.calculateScore()).toBe(60);
 });
 
-export const manyOpenFrames = (count = 10, firstThrow = 0, secondThrow = 0) => {
+export const manyOpenFrames = (
+  game,
+  count = 10,
+  firstThrow = 0,
+  secondThrow = 0
+) => {
   for (let frameNumber = 0; frameNumber < count; frameNumber++) {
     game.openFrame(firstThrow, secondThrow);
   }
