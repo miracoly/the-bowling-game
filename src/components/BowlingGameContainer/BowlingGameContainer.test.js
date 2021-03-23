@@ -87,6 +87,44 @@ test("UI: Spare in Final Frame", () => {
   expectLastFrameToBe(4, 6, 5, 15);
 });
 
+test("UI: Perfect Game", () => {
+  /* Set game to test case */
+  for (let i = 0; i < 10; i++) {
+    game.strike();
+  }
+  game.bonusBall(10);
+  game.bonusBall(10);
+  render(<BowlingGameContainer initialBowlingGame={game} />);
+
+  /* Test UI  */
+  expectTotalScoreToBe(300);
+  /* Test first and ninth throw to be strike */
+  for (let i = 1; i <= 9; i++) {
+    expectFrameToBe(i, 10, null, 30);
+  }
+  expectLastFrameToBe(10, 10, 10, 30);
+});
+
+test("Alternating Strike & Spare", () => {
+  /* Set game to test case */
+  for (let i = 0; i < 5; i++) {
+    game.strike();
+    game.spare(5, 5);
+  }
+  game.bonusBall(10);
+  render(<BowlingGameContainer initialBowlingGame={game} />);
+
+  /* Test UI  */
+  expectTotalScoreToBe(200);
+  /* Test first and ninth throw to be strike */
+  for (let i = 1; i < 9; i += 2) {
+    expectFrameToBe(i, 10, null, 20);
+    expectFrameToBe(i + 1, 5, 5, 20);
+  }
+  expectFrameToBe(9, 10, null, 20);
+  expectLastFrameToBe(5, 5, 10, 20);
+});
+
 /* Helper Functions to test UI */
 
 const expectTotalScoreToBe = (score) => {
@@ -99,9 +137,14 @@ const expectFrameToBe = (frameIndex, firstThrow, secondThrow, frameTotal) => {
   expect(getByTestId(`first-throw-${frameIndex}`)).toHaveTextContent(
     firstThrow.toString()
   );
-  expect(getByTestId(`second-throw-${frameIndex}`)).toHaveTextContent(
-    secondThrow !== null ? secondThrow.toString() : ""
-  );
+
+  if (secondThrow === null) {
+    expect(getByTestId(`second-throw-${frameIndex}`)).toBeEmptyDOMElement();
+  } else {
+    expect(getByTestId(`second-throw-${frameIndex}`)).toHaveTextContent(
+      secondThrow.toString()
+    );
+  }
 
   expect(getByTestId(`frame-total-${frameIndex}`)).toHaveTextContent(
     frameTotal.toString()

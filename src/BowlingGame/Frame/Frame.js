@@ -13,7 +13,7 @@ class Frame {
 
   getSecondThrow() {
     const { throws, startingThrow, frameSize } = this;
-    return frameSize === 2 ? throws[startingThrow + 1] : null;
+    return frameSize === 2 ? throws[startingThrow + 1] : "";
   }
 
   bonusBall(count) {
