@@ -24,6 +24,10 @@ You find a GUI version here: [Code](https://github.com/miracoly/the-bowling-game
 
 [![screenshot](https://github.com/miracoly/the-bowling-game/raw/gui/public/preview.png)](https://github.com/miracoly/the-bowling-game/tree/gui)
 
+## Simpler Version
+
+A much shorter and perhaps simpler version of the Bowling Game can be found here: [Code](https://github.com/miracoly/the-bowling-game/tree/simpler)
+
 ## Build with
 
 - Jest: Javascript Testing Framework - [Doc](https://jestjs.io/docs/getting-started) | [Repo](https://github.com/facebook/jest)
