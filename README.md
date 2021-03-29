@@ -1,6 +1,6 @@
 # The Bowling Game
 
-This project is part of my Apprenticeship Program at kloseBrothers. The goal is to fullfill the requirements of the following code kata by using TDD, Test Driven Development.
+This project is part of my Apprenticeship Program at klose brothers. The goal is to fullfill the requirements of the following code kata by using TDD, Test Driven Development.
 
 ## Code Kata - Problem Description
 
@@ -34,4 +34,4 @@ A much shorter and perhaps simpler version of the Bowling Game can be found here
 
 ## Credits
 
-- [kloseBrosers](https://www.klosebrothers.de/de/start.html) - Agile Software Development in Bielefeld, Germany
+- [klose brothers](https://www.klosebrothers.de/de/start.html) - Agile Software Development in Bielefeld, Germany
